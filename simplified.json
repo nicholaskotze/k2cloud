@@ -1,0 +1,66 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "WorkItemTracking",
+    "description": "",
+    "termsOfService": "https://go.microsoft.com/fwlink/?LinkId=329770",
+    "contact": {
+      "name": "nugetvss",
+      "email": "nugetvss@microsoft.com"
+    },
+    "license": {
+      "name": "MICROSOFT SOFTWARE LICENSE TERMS",
+      "url": "https://go.microsoft.com/fwlink/?LinkId=329770"
+    },
+    "version": "7.2-preview"
+  },
+  "host": "dev.azure.com",
+  "x-ms-vss-area": "WorkItemTracking",
+  "x-ms-vss-resource-area-id": "5264459e-e5e0-4bd8-b118-0985e68a4ec5",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Work Items",
+      "description": "The Work Item API is used for listing, creating and updating work items"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/nintex/Nintex/_apis/wit/workitems": {
+      "get": {
+        "tags": [
+          "Work Items"
+        ],
+        "x-ms-docs-override-version": "7.2-preview.3",
+        "x-ms-vss-resource": "workItems",
+        "x-ms-vss-method": "GetWorkItems",
+        "x-ms-preview": true,
+        "description": "Returns a list of work items (Maximum 200)",
+        "operationId": "Work Items_List",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "fields",
+            "description": "Comma-separated list of requested fields",
+            "required": false,
+            "type": "string",
+            "format": "array (string)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+        }
+      }
+    }
+  }
+}
+}
